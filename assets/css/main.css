@@ -34,7 +34,7 @@ body {
 }
 
 ol, ul {
-	list-style: none;
+	list-style: none !important;
 }
 
 blockquote, q {
@@ -1859,7 +1859,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			box-shadow: 0 0 0 2px #21b2a6;
+			box-shadow: 0 0 0 2px #1c2e4e;
 		}
 
 	select {
@@ -1956,7 +1956,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			box-shadow: 0 0 0 2px #21b2a6;
+			box-shadow: 0 0 0 2px #1c2e4e;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2148,11 +2148,11 @@ input, select, textarea {
 	ul {
 		list-style: disc;
 		margin: 0 0 2em 0;
-		padding-left: 1em;
+		padding-left: 0;
 	}
 
 		ul li {
-			padding-left: 0.5em;
+			padding-left: 0;
 		}
 
 		ul.alt {
@@ -2487,7 +2487,7 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #ed4933;
+			background-color: #ed3371;
 			box-shadow: none !important;
 			color: #ffffff !important;
 		}
@@ -2817,7 +2817,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background-color: #21b2a6;
+			background-color: #1c2e4e;
 			color: #c8ece9;
 		}
 
@@ -2871,7 +2871,7 @@ input, select, textarea {
 
 				.wrapper.style1 select option {
 					color: #ffffff;
-					background: #21b2a6;
+					background: #1c2e4e;
 				}
 
 			.wrapper.style1 input[type="checkbox"] + label,
@@ -2887,7 +2887,7 @@ input, select, textarea {
 			.wrapper.style1 input[type="checkbox"]:checked + label:before,
 			.wrapper.style1 input[type="radio"]:checked + label:before {
 				background: #ffffff;
-				color: #21b2a6;
+				color: #1c2e4e;
 			}
 
 			.wrapper.style1 ::-webkit-input-placeholder {
@@ -3351,7 +3351,7 @@ input, select, textarea {
 		-ms-transition: -ms-transform 0.5s ease;
 		transition: transform 0.5s ease;
 		-webkit-overflow-scrolling: touch;
-		background: #21b2a6;
+		background: #1c2e4e;
 		color: #ffffff;
 		height: 100%;
 		max-width: 80%;
@@ -3998,3 +3998,10 @@ input, select, textarea {
 		background-color: #1d242a;
 	}
 	
+.btn{
+	width:100%;
+}
+
+#pomodoro{
+	font-size: 4em !important;
+}
