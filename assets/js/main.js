@@ -89,8 +89,7 @@
 	// let clock;
 
 	/////////////
-	let x = document.querySelector('p').innerHTML;
-	console.log('dsdsds')
+	let audioEl = document.querySelector("audio");
 	document.querySelector('#start').addEventListener('click', startPomodoro);
 	document.querySelector('#break').addEventListener('click', startBreak);
 	document.querySelector('#pause').addEventListener('click', pause);
@@ -145,12 +144,15 @@
 			//secondsLeft = seconds;
 			seconds--;
 			seconds < 0
-				? clearInterval(clock)
+				? end()
 				: document.querySelector('#pomodoro').innerHTML = `${Math.floor(seconds / 60)}:${(seconds % 60 < 10) ? "0" + seconds % 60 : seconds % 60}`;
 		}, 1000);
 	}
 
-
+	function end(){
+		audioEl.play();
+		clearInterval(clock);
+	}
 	/////////
 
 
