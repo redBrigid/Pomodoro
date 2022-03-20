@@ -123,57 +123,76 @@
 
 	function startPomodoro() {
 		unpause();
-		seconds = 60 * 25;
+		const h = Number(document.querySelector('#startHours').value);
+		const m = Number(document.querySelector('#startMinutes').value);
+		const s = Number(document.querySelector('#startSeconds').value);
+		seconds = 60 * 60 * h + (60 * m) + s;
 		document.querySelector('#title').innerHTML = "Pomodoro Session"
 		countDown();
 	}
 
 	function startBreak() {
 		unpause();
-		seconds = 60 * 5;
+		const h = Number(document.querySelector('#startHoursBreak').value);
+		const m = Number(document.querySelector('#startMinutesBreak').value);
+		const s = Number(document.querySelector('#startSecondsBreak').value);
+		seconds = 60 * 60 * h + (60 * m) + s;
 		document.querySelector('#title').innerHTML = "Break"
 		countDown();
 	}
 
+	function currentClockValue(seconds) {
+		return `${Math.floor(Math.round(seconds) / 60)}:${(Math.round(seconds) % 60 < 10) ? "0" + Math.round(seconds) % 60 : Math.round(seconds) % 60}`
+	}
+
 	function countDown() {
-		console.log('sdsdsd', clock)
+
 		clearInterval(clock);
-		document.querySelector('#pomodoro').innerHTML =
-			`${Math.floor(seconds / 60)}:${(seconds % 60 < 10) ? "0" + seconds % 60 : seconds % 60}`;
+		document.querySelector('#pomodoro').innerHTML = currentClockValue(seconds)
 		clock = setInterval(() => {
-			//secondsLeft = seconds;
 			seconds--;
 			seconds < 0
 				? end()
-				: document.querySelector('#pomodoro').innerHTML = `${Math.floor(seconds / 60)}:${(seconds % 60 < 10) ? "0" + seconds % 60 : seconds % 60}`;
+				: document.querySelector('#pomodoro').innerHTML = currentClockValue(seconds);
 		}, 1000);
 	}
 
-	function end(){
-		audioEl.play();
+	function end() {
+		console.log('end')
+		document.querySelector('#pomodoro').innerHTML = currentClockValue(0);
+		if (document.querySelector('#audioCheckbox').checked) audioEl.play();
 		clearInterval(clock);
 	}
-	/////////
 
 
-	// function pausePomodoro(){
-	// 	clearInterval(clock);
-	// }
+	document.querySelector("#resetPomodoro").addEventListener('click', resetPomodoro)
+	document.querySelector("#resetBreak").addEventListener('click', resetBreak)
 
-	// function startPomodoro(){
-	// 	if(seconds<=0) seconds=60*25;
-	// 	const timeout = 1000*seconds;
-	// 	clock = setInterval(()=>{
-	// 	 secondsLeft=seconds;
-	// 	 seconds--;
-	// 	 seconds<0
-	// 		?clearInterval(clock)
-	// 		:document.querySelector('#pomodoro').innerHTML=`${Math.floor(seconds/60)}:${(seconds%60<10)?"0"+seconds%60:seconds%60}`;
+	function resetPomodoro() {
+		reset('pomodoro');
+	}
 
-	//  },1000);
+	function resetBreak() {
+		reset('break');
+	}
 
+	function reset(itemToReset) {
+		switch (itemToReset) {
+			case 'pomodoro':
+				document.querySelector("#startHours").value = 0;
+				document.querySelector("#startMinutes").value = 25;
+				document.querySelector("#startSeconds").value = 0;
+				break;
+			case 'break':
+				document.querySelector("#startHoursBreak").value = 0;
+				document.querySelector("#startMinutesBreak").value = 5;
+				document.querySelector("#startSecondsBreak").value = 0;
+				break;
+			default:
 
+				break;
+		}
+	}
 
-	// }
 
 })(jQuery);

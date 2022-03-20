@@ -21,42 +21,55 @@
 	<!-- Page Wrapper -->
 	<div id="page-wrapper">
 
-		<!-- Header -->
-		<!-- <header id="header" class="alt">
-			<h1><a href="index.html">Spectral</a></h1>
-			<nav id="nav">
-				<ul>
-					<li class="special">
-						<a href="#menu" class="menuToggle"><span>Menu</span></a>
-						<div id="menu">
-							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-								<li><a href="#">Sign Up</a></li>
-								<li><a href="#">Log In</a></li>
-							</ul>
-						</div>
-					</li>
-				</ul>
-			</nav>
-		</header> -->
-
 		<!-- Banner -->
 		<section id="banner">
 			<div class="inner">
 				<h1 id="title"> Pomodoro session</h1>
 				<h2 id="pomodoro">=^.^=</h2>
+				
 				<ul>
-					<li><a id="start" class="btn button primary">Start Pomodoro</a></li>
-					<li><a id="break" class="btn button primary">Start Break</a></li>
+					<li id="up">
+						<fieldset>
+							<legend>Pomodoro</legend>
+							<section class="time">
+								<label for="startHours">Hours:</label>
+								<input type="number" id="startHours" value="0" step="1" min="0" max="24">
+								<label for="startMinutes">Minutes:</label>
+								<input type="number" id="startMinutes" value="25" step="1" min="0" max="60">
+								<label for="startSeconds">Seconds:</label>
+								<input type="number" id="startSeconds" value="0" step="1" min="0" max="60">
+								<span id="resetPomodoro">Reset</span>
+							</section>
+							<a id="start" class="btn button primary">Start Pomodoro</a>
+						</fieldset>
+					</li>
+					<li>
+
+						<fieldset>
+							<legend>Break</legend>
+							<section class="time">
+								<label for="startHoursBreak">Hours:</label>
+								<input type="number" id="startHoursBreak" value="0" step="1" min="0" max="24">
+								<label for="startMinutesBreak">Minutes:</label>
+								<input type="number" id="startMinutesBreak" value="5" step="1" min="0" max="60">
+								<label for="startSecondsBreak">Seconds:</label>
+								<input type="number" id="startSecondsBreak" value="0" step="1" min="0" max="60">
+								<span id="resetBreak">Reset</span>
+							</section>
+							<a id="break" class="btn button primary">Start Break</a>
+						</fieldset>
+
+					</li>
 					<li><a id="pause" class="btn button primary">Pause</a></li>
+					<input type="checkbox" id="audioCheckbox" checked>
+					<label for="audioCheckbox">Play short sound when counting down will finish.</label>
 					<audio preload="auto">
 						<source src="assets/audio/sound.mp3" type="audio/mpeg">
 						<source src="assets/audio/sound.ogg" type="audio/ogg">
 						<p>Your browser doesn't support HTML5 audio.</p>
 					</audio>
 				</ul>
+
 			</div>
 			<a href="#one" class="more scrolly">Learn More</a>
 		</section>
@@ -67,8 +80,11 @@
 				<header class="major">
 					<h2>What is "Pomodoro"?</h2>
 					<p>
-						It's the technique which helps you to fight against procrastination (wandering and wasting time instead of doing things which you have to do). Seeing a hard task to do and concentrating on the result we feel discouraged and our brain wants to go from that unpleasant feeling and finds other things to do like browsing the internet or watching TV. But one of tricks is to concentrate on the process instead of on the result.
-
+						It's the technique which helps you to fight against procrastination (wandering and wasting time
+						instead of doing things which you have to do). Seeing a hard task to do and concentrating on the
+						result we feel discouraged and our brain wants to go from that unpleasant feeling and finds
+						other things to do like browsing the internet or watching TV. But one of tricks is to
+						concentrate on the process instead of on the result.
 					</p>
 				</header>
 			</div>
@@ -80,7 +96,10 @@
 				<div class="image"><img src="images/pic01.jpg" alt="" /></div>
 				<div class="content">
 					<h2>Process vs result</h2>
-					<p>Concentrating on process means expecting the essay to be already written, home to be cleaned etc. what othen is overwhelming. But if our aim is to just sit for 25 minutes and do whatever, just the smallest step (but from our todo list!) is easier because we don't compare our current progress to expectations. So we extinct our sabotaging feelings and work becomes easier.
+					<p>Concentrating on process means expecting the essay to be already written, home to be cleaned etc.
+						what othen is overwhelming. But if our aim is to just sit for 25 minutes and do whatever, just
+						the smallest step (but from our todo list!) is easier because we don't compare our current
+						progress to expectations. So we extinct our sabotaging feelings and work becomes easier.
 					</p>
 				</div>
 			</section>
@@ -88,7 +107,12 @@
 				<div class="image"><img src="images/pic02.jpg" alt="" /></div>
 				<div class="content">
 					<h2>Breaks</h2>
-					<p>It's good to make a 5 minutes break after each session. Move and stretch a bit, have some pleasure or reward for effort we just did like a piece of chocolate, playing a game etc. It's important to rewire our brains which uses dopamine to make us linking procrastination and disliking things to do. Having a reward after the pomodoro sessions we cheat our brain that such session is something what we like and it makes things easier as we don't need to fight against ourselves.
+					<p>It's good to make a 5 minutes break after each session. Move and stretch a bit, have some
+						pleasure or reward for effort we just did like a piece of chocolate, playing a game etc. It's
+						important to rewire our brains which uses dopamine to make us linking procrastination and
+						disliking things to do. Having a reward after the pomodoro sessions we cheat our brain that such
+						session is something what we like and it makes things easier as we don't need to fight against
+						ourselves.
 					</p>
 				</div>
 			</section>
@@ -96,78 +120,28 @@
 				<div class="image"><img src="images/pic03.jpg" alt="" /></div>
 				<div class="content">
 					<h2>Why name "Pomodoro"?</h2>
-					<p>Because of the kitchen tool which counts time for boiling eggs, baking cake etc. These tools can have fancy shapes, including tomato (pomodoro) which was the inspiration to make this technique.
+					<p>Because of the kitchen tool which counts time for boiling eggs, baking cake etc. These tools can
+						have fancy shapes, including tomato (pomodoro) which was the inspiration to make this technique.
 					</p>
 				</div>
 			</section>
 		</section>
-
-		<!-- Three
-		<section id="three" class="wrapper style3 special">
-			<div class="inner">
-				<header class="major">
-					<h2>Accumsan mus tortor nunc aliquet</h2>
-					<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-						fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
-				</header>
-				<ul class="features">
-					<li class="icon fa-paper-plane">
-						<h3>Arcu accumsan</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-							Aenean ligula consequat consequat.</p>
-					</li>
-					<li class="icon solid fa-laptop">
-						<h3>Ac Augue Eget</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-							Aenean ligula consequat consequat.</p>
-					</li>
-					<li class="icon solid fa-code">
-						<h3>Mus Scelerisque</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-							Aenean ligula consequat consequat.</p>
-					</li>
-					<li class="icon solid fa-headphones-alt">
-						<h3>Mauris Imperdiet</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-							Aenean ligula consequat consequat.</p>
-					</li>
-					<li class="icon fa-heart">
-						<h3>Aenean Primis</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-							Aenean ligula consequat consequat.</p>
-					</li>
-					<li class="icon fa-flag">
-						<h3>Tortor Ut</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-							Aenean ligula consequat consequat.</p>
-					</li>
-				</ul>
-			</div>
-		</section> -->
 
 		<!-- CTA -->
 		<section id="cta" class="wrapper style4">
 			<div class="inner">
 				<header>
 					<h2>Have fun!</h2>
-					<p>There is no method which will be perfect for everyone. Feel free to try it out, adjust or whatever. Remember - the method is for you, not you for method.</p>
+					<p>There is no method which will be perfect for everyone. Feel free to try it out, adjust or
+						whatever. Remember - the method is for you, not you for method.</p>
 				</header>
-				<!-- <ul class="actions stacked">
-					<li><a href="#" class="button fit primary">Activate</a></li>
-					<li><a href="#" class="button fit">Learn More</a></li>
-				</ul> -->
+
 			</div>
 		</section>
 
 		<!-- Footer -->
 		<footer id="footer">
-			<!-- <ul class="icons">
-				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-				<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-			</ul> -->
+
 			<ul class="copyright">
 				<li>&copy; redBrigid</li>
 				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
